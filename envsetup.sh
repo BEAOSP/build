@@ -579,7 +579,7 @@ function breakfast()
     local variant=$2
     unset LUNCH_MENU_CHOICES
     add_lunch_combo full-eng
-    for f in `/bin/ls vendor/pa/vendorsetup.sh 2> /dev/null`
+    for f in `/bin/ls vendor/beaosp/vendorsetup.sh 2> /dev/null`
         do
             echo "including $f"
             . $f
@@ -599,7 +599,7 @@ function breakfast()
             if [ -z "$variant" ]; then
                 variant="userdebug"
             fi
-            lunch pa_$target-$variant
+            lunch beaosp_$target-$variant
         fi
     fi
     return $?
@@ -648,7 +648,7 @@ function lunch()
         fi
     fi
 
-    if [[ $product == pa_* ]]
+    if [[ $product == beaosp_* ]]
     then
         pushd $(gettop) > /dev/null
         build/tools/roomservice.py $product
