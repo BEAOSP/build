@@ -597,7 +597,7 @@ function breakfast()
         else
             # This is probably just the PA model name
             if [ -z "$variant" ]; then
-                variant="userdebug"
+                variant="user"
             fi
             lunch beaosp_$target-$variant
         fi
